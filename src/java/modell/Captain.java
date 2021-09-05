@@ -76,8 +76,8 @@ public class Captain extends Pirate {
     public void fight(Pirate enemy) {
         if (super.isCanFight()) {
             int strengthDifference = Math.abs(super.getStrength() - enemy.getStrength());
-            enemy.decrementHealth(strengthDifference);
             System.out.println(getName()+" shoots at "+enemy.getName());
+            enemy.decrementHealth(strengthDifference);
             if(enemy.getHealth()!=0){
                 System.out.println("\t"+enemy.getName() + " is hurt. Remaining health: " + enemy.getHealth());
             }
