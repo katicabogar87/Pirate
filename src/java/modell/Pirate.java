@@ -11,6 +11,7 @@ public class Pirate {
     private int health;     //  0 -> 10
     private static int maxHealth = 10;
     private static int minHealth = 5;
+    private static int fightThreshold = 40;
     private DrunkLevel drunkLevel;  //0.1, 0.5, 1, 1.1, 1.2
     private Ship ship;
 
@@ -31,7 +32,7 @@ public class Pirate {
     }
 
     public boolean isCanFight(){
-        return (getFightValue() > 40);
+        return (getFightValue() > fightThreshold);
     }
     public double getFightValue(){return ((double)(strength * health) * drunkLevel.getCoefficient());}
 
@@ -39,7 +40,7 @@ public class Pirate {
         if (isCanFight()){
 
             System.out.println(name + " (S: "+strength+") (H: "+health+") (D: "+drunkLevel+") "+" vs "
-                    + enemy.getName() + " (S: "+enemy.getStrength()+") (H: "+enemy.getHealth()+") (D: "+enemy.getDrunkLevel()+") ");
+                    + enemy.getName() + " (S: "+enemy.getStrength()+") (H: "+enemy.getHealth()+") (D: "+enemy.getDrunkLevel()+")");
             int strengthDifference = Math.abs(strength - enemy.getStrength());
             if ((getFightValue()) >= (enemy.getFightValue())) {
                 enemy.decrementHealth(strengthDifference);
@@ -56,29 +57,6 @@ public class Pirate {
             System.out.println(name + " is unable to fight.");
         }
     }
-
-    /*public void fight(Pirate enemy){
-        if (isCanFight()){
-
-            System.out.println(name + " (Strength: "+strength+") (Health: "+health+") (Drunkness: "+drunkLevel.toString()+") "+" vs "
-                    + enemy.getName() + " (Strength: "+enemy.getStrength()+") (Health: "+enemy.getHealth()+")(Drunkness: "+drunkLevel.toString()+") ");
-            int strengthDifference = Math.abs(strength - enemy.getStrength());
-            if (strength >= enemy.getStrength()) {
-                enemy.decrementHealth(strengthDifference);
-                if(enemy.getHealth()!=0) {
-                    System.out.println(enemy.getName() + " is hurt. Remaining health:  " + enemy.getHealth());
-                }
-            } else {
-                decrementHealth(strengthDifference);
-                if(health!=0) {
-                    System.out.println(name + " is hurt. Remaining health: " + health);
-                }
-            }
-        }else{
-            System.out.println(name + " is unable to fight.");
-        }
-    }*/
-
 
     public String getName() {
         return name;
@@ -104,7 +82,6 @@ public class Pirate {
         if(health==0){
             ship.crewLoss.add(this);
             ship.crew.remove(this);
-
         }
     }
 
