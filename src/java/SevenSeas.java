@@ -1,6 +1,5 @@
 import module.BattleField;
 import module.Tortuga;
-import util.Printer;
 import util.Reader;
 
 public class SevenSeas {
@@ -13,9 +12,6 @@ public class SevenSeas {
 
         BattleField.winnerShip = BattleField.phaseOne();
         BattleField.winnerShip = BattleField.phaseTwo();
-
-
-
 
     }
 }

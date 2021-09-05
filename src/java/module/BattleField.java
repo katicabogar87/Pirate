@@ -33,7 +33,6 @@ public class BattleField {
             } else {
                 System.out.println("Winner is: " + winner.getName());
             }
-
         }
 
         return winner;

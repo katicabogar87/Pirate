@@ -171,7 +171,9 @@ public class Ship {
             System.out.println(crew.get(last).getName() + " ");
             crew.get(last).setHealth(0);
         }
-        System.out.println("R. I. P.");
+        if(manLoss!=0) {
+            System.out.println("R. I. P.");
+        }
     }
 
     public int getMenPower(){
