@@ -32,3 +32,9 @@ Paul,Octondi
 Buba,Bagoleshyo
 Kubok,Skulls
 Josef,Bones
+Cacao,Dog
+Romero,Soap
+Fabian,Shitbrix
+Zachary,Birdbeard
+Tom,Mucus
+Babaroe,Wipes

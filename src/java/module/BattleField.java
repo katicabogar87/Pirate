@@ -20,7 +20,7 @@ public class BattleField {
         if(attackerShip.equals(shipsInBattle.get(0))){defenderShip = shipsInBattle.get(1);}
         else {defenderShip = shipsInBattle.get(0);}
 
-        System.out.println("The cruel fight begins between ships!");
+        System.out.println("A cruel fight breaks out between the ships!");
         Printer.pressKeyToContinue();
 
             winner = cannonsFired(attackerShip, defenderShip);
@@ -63,12 +63,14 @@ public class BattleField {
     private static Ship cannonsFired(Ship attackerShip, Ship defenderShip) {
         Ship winner=null;
 
-        System.out.println(attackerShip.getName()+" has "+ attackerShip.shotsFired() + " shots.");
-        System.out.println(defenderShip.getName()+" has "+ defenderShip.shotsFired() + " shots.");
+        /*System.out.println(attackerShip.getName()+" has "+ attackerShip.shotsFired() + " shots.");
+        System.out.println(defenderShip.getName()+" has "+ defenderShip.shotsFired() + " shots.");*/
+        System.out.println(attackerShip.getName()+" has "+ attackerShip.shotsFired() + " operable cannons onboard.");
+        System.out.println(defenderShip.getName()+" has "+ defenderShip.shotsFired() + " operable cannons onboard.");
 
         for (int i = 0; i < Math.max(attackerShip.shotsFired(), defenderShip.shotsFired()); i++) {
             if (i <= attackerShip.shotsFired()){
-                System.out.println(attackerShip.getName()+"'s "+(i+1)+". cannon fires:");
+                System.out.println(attackerShip.getName()+ " (Cond.: "+ attackerShip.getCondition() +"%)'s " + (i+1)+". cannon fires:");
                winner=attackerShip.attack(defenderShip);
                if (winner != null){
                    return winner;
@@ -77,13 +79,13 @@ public class BattleField {
                 System.out.println(attackerShip.getName()+" has no more shots.");
             }
             if (i <= defenderShip.shotsFired()){
-                System.out.println(defenderShip.getName()+"'s "+(i+1)+". cannon fires:");
+                System.out.println(defenderShip.getName()+ " (Cond.: "+ defenderShip.getCondition() +"%)'s " + (i+1)+". cannon fires:");
                 winner = defenderShip.attack(attackerShip);
                 if (winner != null){
                     return winner;
                 }
             }else{
-                System.out.println(defenderShip.getName()+" has no more shots.");
+                System.out.println(defenderShip.getName()+" has no more shots left.");
             }
         }
 return null;

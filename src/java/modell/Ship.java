@@ -130,7 +130,7 @@ public class Ship {
 
     public  Ship attack(Ship enemyShip) {
         int incomingHit = (int) (Math.random() * 100);
-        if (incomingHit < 92) {
+        if (incomingHit < 82) {
             System.out.println("MISS!");
             return null;
         } else {
@@ -154,7 +154,7 @@ public class Ship {
             } else {
                 int generalDamage = (int) (Math.random() * (15 - 5 + 1) + 5);
                 enemyShip.decrementCondition(generalDamage);
-                System.out.println("Ship got hit by cannonball! Remaining condition: "+enemyShip.getCondition());
+                System.out.println("Damage dealt: " + generalDamage);
                 if(enemyShip.getCondition()==0){
                     return this;
                 }else return null;
