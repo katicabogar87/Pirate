@@ -36,5 +36,10 @@ Cacao,Dog
 Romero,Soap
 Fabian,Shitbrix
 Zachary,Birdbeard
-Tom,Mucus
+Tom,Muscus
 Babaroe,Wipes
+Fred,Fites
+Gaspar,Bedbrett
+Karl,Spanks
+Chris,Dumps
+Tony,Womicc
